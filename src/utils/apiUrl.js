@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_API_URL || "https://sky-fall-dev.vercel.app/";
+const BASE_URL = process.env.REACT_APP_BASE_API_URL || "https://sky-fall-payload.vercel.app";
 const API_BASE = `${BASE_URL}/api`;
 
 export const API_URL = {
