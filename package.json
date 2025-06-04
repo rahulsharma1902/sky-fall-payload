@@ -31,7 +31,7 @@
     "motion": "^11.18.2",
     "next": "^15.0.3",
     "payload": "3.40.0",
-    "react": "^18.2.0",
+    "react": "19.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.57.0",
     "react-use": "^17.6.0",
