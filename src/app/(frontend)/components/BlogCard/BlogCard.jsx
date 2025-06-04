@@ -2,11 +2,19 @@ import Link from 'next/link'
 import Image from "next/image";
 
 export default function BlogCard({ blog }) {
+  const imageFilename = blog?.image?.url?.split('/').pop();
+
   return (
     <div className="blog-boxs">
       <div className="card bg-dark text-white h-100">
-        <img
+        {/* <img
           src={blog?.image?.url}
+          className="card-img-top rounded-none"
+          alt={blog?.image?.alt || blog?.title}
+          style={{ height: '160px', objectFit: 'cover' }}
+        /> */}
+        <img
+          src={`/media/${imageFilename}`}
           className="card-img-top rounded-none"
           alt={blog?.image?.alt || blog?.title}
           style={{ height: '160px', objectFit: 'cover' }}

@@ -64,7 +64,8 @@ const BlogDetail = () => {
         </p>
         <div className="details-images">
         <img
-          src={blog?.image?.url}
+          // src={blog?.image?.url}
+          src={`/media/${blog.image.url.split('/').pop()}`}
           className="card-img-top"
           alt={blog?.image?.alt || blog?.title}
         />

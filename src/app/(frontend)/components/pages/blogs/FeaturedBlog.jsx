@@ -31,7 +31,12 @@ const FeaturedBlog = ({
           <div className="col-md-7 featured-blog-image">
           <div className="featured-img">
           <img
-              src={featured.image?.url || StaticImage }
+              // src={featured.image?.url || StaticImage }
+              src={
+                featured.image?.url
+                  ? `/media/${featured.image.url.split('/').pop()}`
+                  : '/images/static-fallback.png'
+              }              
               alt={featured?.alt || featured?.title}
               style={{ width: '100%', height: '100%',objectFit: 'cover' }}
             />
