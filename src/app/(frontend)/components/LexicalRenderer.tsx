@@ -62,7 +62,8 @@ const renderNode = (node: Node, key?: React.Key): React.ReactNode => {
       return (
         <img
           key={key}
-          src={node.value?.url}
+          // src={node.value?.url}
+          src={`/media/${node?.value?.url.split('/').pop()}`}
           alt={node.value?.alt || ""}
           style={{ maxWidth: "100%", ...node.style }}
         />
