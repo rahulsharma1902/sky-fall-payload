@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import "./Footer.css";
 
 import FooterMenu from "../Menu/FooterMenu";
 
@@ -9,7 +10,7 @@ const Footer = () => {
   return (
     <section className="layoutBg container-fluid-xxl">
       <footer>
-        <div className="container-xxl py-4">
+        <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4 col-7 text-md-start text-start">
               <p className={`f-16 f-c-s ff-j`}>

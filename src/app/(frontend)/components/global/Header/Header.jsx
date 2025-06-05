@@ -5,11 +5,11 @@ import HeaderMenu from "../Menu/HeaderMenu";
 
 const Header = () => {
   return (
-    <section className="layoutBg container-fluid ">
+    <section className="layoutBg">
       <header>
-        <div className="container-xxl py-1 no-padding">
+        <div className="no-padding">
           {/* <nav className="navbar navbar-expand-lg align-items-center "> */}
-          <nav className="navbar  ">
+          <nav className="navbar">
             <div className="container no-padding">
               <Link href="/">
                 <Image
