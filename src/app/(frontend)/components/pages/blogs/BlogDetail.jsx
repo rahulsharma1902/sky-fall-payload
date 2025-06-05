@@ -64,11 +64,23 @@ const BlogDetail = () => {
         </p>
         <div className="details-images">
         <img
-          src={blog?.image?.url}
-          // src={`/media/${blog.image.url.split('/').pop()}`}
+          // src={blog?.image?.url}
+          src={`/media/${blog.image.url.split('/').pop()}`}
           className="card-img-top"
           alt={blog?.image?.alt || blog?.title}
+          loading="lazy"
         />
+        {/* <picture>
+          <source media="(min-width: 1024px)" srcSet={blog.image?.sizes?.desktop?.url} />
+          <source media="(min-width: 640px)" srcSet={blog.image?.sizes?.tablet?.url} />
+          <img
+            src={blog.image?.sizes?.desktop?.url || blog.image?.url}
+            alt={blog.image?.alt || 'Blog image'}
+            loading="lazy"
+            style={{ width: "100%"}}
+          />
+        </picture> */}
+
         </div>
         {/* <h1 className="text-3xl font-bold mb-4">{blog?.title}</h1>
         <p className="text-sm text-mute font-bold mb-4">{blog?.description}</p> */}

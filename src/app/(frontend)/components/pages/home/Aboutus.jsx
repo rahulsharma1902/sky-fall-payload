@@ -6,14 +6,14 @@ import Divider from "../../common/divider/Divider";
 const Aboutus = () => {
   return (
     <>
-      <Divider />
+      {/* <Divider /> */}
       <section className="container-xxl">
         <div className="container pt-3">
           <div className="row pt-md-5 pt-4">
             <div className="col-12 text-center px-md-0 px-3">
               <h1 className="f-64 f-c-p ">About us</h1>
               <div className="px-md-4 px-lg-5 py-3 pb-5 pt-3 mx-md-4 mx-lg-5">
-                <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1">
+                {/* <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1">
                   The Skyfall founding team comprises of Maluuba founders who
                   were previously pioneers in the Deep learning revolution.
                   Maluuba worked with AI pioneers such as Yoshua Bengio and
@@ -22,8 +22,8 @@ const Aboutus = () => {
                   AI research center in Canada.
                   <br />
                   <br />
-                </p>
-                <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1">
+                </p> */}
+                {/* <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1">
                   Skyfall is an early pioneer in the AI revolution by inventing
                   the first enterprise world model and thereby creating the
                   world&apos;s first autonomous enterprise, starting with a
@@ -32,7 +32,20 @@ const Aboutus = () => {
                   the top conferences in the past including NIPS, ICML, ACL,
                   NAACL, et al. For more information, please contact -{" "}
                   <Link href={"mailto:info@skyfall.ai"}>info@skyfall.ai</Link>
+                </p> */}
+                <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1">
+                  Sam Pasupalak, previously co-founded Maluuba, one of the pioneers of Deep
+                  <br />
+                  Learning acquired by <Link href={"#"}>MICROSOFT</Link>
                 </p>
+                <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1 mt-5">
+                Now, with Skyfall, we're pioneering the world’s first autonomous IT department,
+                <br /> 
+                transforming IT from a cost center to a strategic driver with AI-powered efficiency
+                <br />
+                and zero overhead.
+                </p>
+                
               </div>
             </div>
           </div>

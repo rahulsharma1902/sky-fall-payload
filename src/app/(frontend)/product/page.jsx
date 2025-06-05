@@ -7,6 +7,7 @@ import Hero from "../components/pages/home/Hero";
 import BannarHome from "../components/pages/home/BannarHome";
 import WorldIT from "../components/pages/home/WorldIT";
 import Lenis from "lenis";
+import Aboutus from "../components/pages/home/Aboutus";
 
 export default function Product() {
   useEffect(() => {
@@ -27,14 +28,15 @@ export default function Product() {
       <BannarHome />
       <WorldIT
         home={true}
-        title={`The World's First`}
-        tagline={`Automated IT Department`}
-        description1={`Reduce IT expenditure by > 80% using`}
-        description2={`Enterprise World Models (light years ahead of LLMs)`}
+        title={`The First AI Department`}
+        tagline={`That Solves All IT Tasks Autonomously`}
+        description1={`Powered by Enterprise World Models - Skyfall’s AI Agents fix complex IT `}
+        description2={`issues, minimizing need for human intervention`}
       />
       <Modal />
       <Eliminate />
       <Disposal />
+      <Aboutus />
     </section>
   );
 }

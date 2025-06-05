@@ -1625,7 +1625,7 @@ const AgentPC = () => {
                 />
               </svg>
             </div>
-            <div
+            {/* <div
               className={`${styles.cardContainer} position-relative itamMinHeight3`}
             >
               <div className={"itam3l"}>
@@ -1716,7 +1716,7 @@ const AgentPC = () => {
                   fill="#ACACAC"
                 />
               </svg>
-            </div>
+            </div> */}
             <div
               className={`${styles.cardContainer} position-relative itamMinHeight4`}
             >
@@ -1823,7 +1823,98 @@ const AgentPC = () => {
                 />
               </svg>
             </div>
+            <div
+              className={`${styles.cardContainer} position-relative itamMinHeight3`}
+            >
+              <div className={"itam3l"}>
+                <div className=" position-relative">
+                  <img
+                    src={"./images/svg/plan.svg"}
+                    className="img-fluid position-absolute itamLoader3g"
+                  />
+                  <img
+                    src={"./images/svg/loader1.svg"}
+                    className="img-fluid itamLoader3 rotateAnimation "
+                  />
+                </div>
+                <p className="f-12 ff-j f-c-s text-uppercase pt-2 ">PLAN</p>
+              </div>
+              <div className="itamDataFlowLines3">
+                <AnimatedLineDots />
+              </div>
+              <div className={"itam3"}>
+                <div className="itam3h">
+                  <div
+                    className={`${styles.cardHeader} d-flex align-items-center`}
+                  >
+                    <div
+                      className={`${styles.cardActiveBg} ${styles.cardCheckHeight} d-flex align-items-center justify-content-center`}
+                    >
+                      <img
+                        src={"/images/icon/checkSmall.svg"}
+                        className="img-fluid"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-uppercase f-14 f-c-p ff-j py-md-2 px-md-3 px-2">
+                        Plan
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className={`${styles.cardBody} d-flex align-items-start justify-content-center flex-column `}
+                >
+                  <div
+                    className={` d-flex align-items-center justify-content-start py-2`}
+                  >
+                    <div className="d-flex align-items-center ">
+                      <div style={{ width: 35 }} className="me-2">
+                        <Image
+                          src={`/images/icon/azaur.svg`}
+                          className="img-fluid "
+                          width={23}
+                          height={25}
+                        />
+                      </div>
+                      <div>
+                        <p className="f-12 ff-j f-c-a f-w-300">$ 102593</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={` d-flex align-items-center justify-content-start py-2`}
+                  >
+                    <div className="d-flex align-items-center ">
+                      <Image
+                        src={`/images/icon/salesForce.svg`}
+                        className="img-fluid me-2"
+                        width={35}
+                        height={25}
+                      />
+                      <div>
+                        <p className="f-12 ff-j f-c-a f-w-300">$ 48793</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <svg
+                className={`${styles.cardContainerArrow}`}
+                width="24"
+                height="8"
+                viewBox="0 0 24 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.333333 4C0.333333 5.47276 1.52724 6.66667 3 6.66667C4.47276 6.66667 5.66667 5.47276 5.66667 4C5.66667 2.52724 4.47276 1.33333 3 1.33333C1.52724 1.33333 0.333333 2.52724 0.333333 4ZM23.3536 4.35355C23.5488 4.15829 23.5488 3.84171 23.3536 3.64644L20.1716 0.464465C19.9763 0.269202 19.6597 0.269202 19.4645 0.464465C19.2692 0.659727 19.2692 0.976309 19.4645 1.17157L22.2929 4L19.4645 6.82843C19.2692 7.02369 19.2692 7.34027 19.4645 7.53553C19.6597 7.73079 19.9763 7.73079 20.1716 7.53553L23.3536 4.35355ZM3 4.5L23 4.5L23 3.5L3 3.5L3 4.5Z"
+                  className="itamSvgPathArrow3"
+                  fill="#ACACAC"
+                />
+              </svg>
+            </div>
             <div
               className={`${styles.cardContainer} position-relative itamMinHeight5`}
             >
