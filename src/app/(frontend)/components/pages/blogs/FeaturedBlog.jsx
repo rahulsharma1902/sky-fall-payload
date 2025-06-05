@@ -5,6 +5,7 @@ import styleMobile from "../home/page.module.css";
 import StaticImage from "../../../assets/images/featured-static.png";
 import Image from "next/image";
 import BlogFeaturedLoading from "../../SkeletonLoading/Blog/BlogFeaturedLoading"
+import Link from 'next/link'
 
 const FeaturedBlog = ({
   blogSettings
@@ -21,7 +22,7 @@ const FeaturedBlog = ({
       alt: "Featured static image",
     },
   };
-
+  console.log(blogSettings);
   return (
     <section className="featured-blog" style={{ background: '#000', color: '#fff', padding: '32px 0' }}>
       <div className="container" style={{ margin: '0 auto', padding: '0 12px' }}>
@@ -30,16 +31,18 @@ const FeaturedBlog = ({
           {/* Left: Image */}
           <div className="col-md-7 featured-blog-image">
           <div className="featured-img">
+          <Link href={`/blog/${featured?.slug}`}>
           <img
-              // src={featured.image?.url || StaticImage }
-              src={
-                featured.image?.url
-                  ? `/media/${featured.image.url.split('/').pop()}`
-                  : '/images/static-fallback.png'
-              }              
+              src={featured.image?.url || StaticImage }
+              // src={
+              //   featured.image?.url
+              //     ? `/media/${featured.image.url.split('/').pop()}`
+              //     : '/images/static-fallback.png'
+              // }              
               alt={featured?.alt || featured?.title}
               style={{ width: '100%', height: '100%',objectFit: 'cover' }}
             />
+          </Link>
           </div>
           </div>
           {/* Right: Blog details */}
@@ -61,17 +64,19 @@ const FeaturedBlog = ({
             <p style={{ color: '#ccc', fontSize: 15, marginBottom: 20, maxWidth: 420 }}>
               {featured.description}
             </p>
-            <button className="more-btn">
-              Read more <span style={{ fontSize: 18 }}>
+            
+            <Link href={`/blog/${featured?.slug}`} className="more-btn">
+              Read more 
+              <span style={{ fontSize: 18 }}>
                 <Image 
-                  src={"/images/icon/arrow_back.svg"}
-                  width={5}
-                  height={5}
-                  alt={"Arrow Back"}
-                  layout="responsive"
-                />
+                    src={"/images/icon/arrow_back.svg"}
+                    width={5}
+                    height={5}
+                    alt={"Arrow Back"}
+                    layout="responsive"
+                  />
               </span>
-            </button>
+            </Link>
           </div>
           </div>
         </div>

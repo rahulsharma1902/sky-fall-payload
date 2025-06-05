@@ -189,7 +189,7 @@ p.featured-date {
     letter-spacing: 0 !important;
 }
 
-.featured-text button {
+.featured-text a {
     background: #161616;
     border: 1px solid #a2a2a2;
     border-radius: 0 !important;
@@ -198,8 +198,11 @@ p.featured-date {
     font-size: 20px !important;
     color: #a2a2a2;
     padding: 8px 20px;
-    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
 }
 
 .featured-text button:hover {
@@ -319,6 +322,17 @@ a.all-blog {
     font-size: 16px;
     line-height: 100%;
     color: #a2a2a2;
+}
+a.more-btn:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+a.more-btn:hover img {transform: translateX(5px);-webkit-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}
+
+a.more-btn img {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .blogdetails-section h2 {
@@ -555,7 +569,7 @@ button.more-btn img {
         flex-direction: column-reverse;
     }
 
-    .featured-text button {
+    .featured-text a {
         display: none;
     }
 

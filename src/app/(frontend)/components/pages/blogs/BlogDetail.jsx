@@ -64,8 +64,8 @@ const BlogDetail = () => {
         </p>
         <div className="details-images">
         <img
-          // src={blog?.image?.url}
-          src={`/media/${blog.image.url.split('/').pop()}`}
+          src={blog?.image?.url}
+          // src={`/media/${blog.image.url.split('/').pop()}`}
           className="card-img-top"
           alt={blog?.image?.alt || blog?.title}
         />
@@ -81,14 +81,14 @@ const BlogDetail = () => {
           <div className="author-flex">
           <div className="image-author">
             <img
-                  src={"/images/svg/download.jpeg"}
-                  alt={"Arrow img"}
+                  src={blog?.author?.profileImage?.url || '/images/svg/download.jpeg'}
+                  alt={blog?.author?.alt || 'Author'}
                   layout="responsive"
                 />
           </div>
           <div className="author-content">
-              <h6>Jacqueline Chan</h6>
-              <p>Head of growth </p>
+              <h6>{blog?.author?.name || '' }</h6>
+              <p>{blog?.author?.position || '' } </p>
           </div>
           </div>
        </div>
