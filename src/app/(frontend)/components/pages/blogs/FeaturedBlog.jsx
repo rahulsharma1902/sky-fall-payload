@@ -21,6 +21,7 @@ const FeaturedBlog = ({
       url: "/images/blog/featured-static.png",
       alt: "Featured static image",
     },
+    slug: "/blog/30-best-ai-prompts-for-the-opertional-management"
   };
   console.log(blogSettings);
   return (
@@ -40,7 +41,8 @@ const FeaturedBlog = ({
           {/* Left: Image */}
           <div className="col-md-7 featured-blog-image">
           <div className="featured-img">
-          <Link href={`/blog/${featured?.slug}`}>
+          {/* <Link href={`/blog/${featured?.slug}`}> */}
+          <Link href={`/blog/30-best-ai-prompts-for-the-opertional-management`}>
           <img
               // src={featured.image?.url || StaticImage }
               src={
@@ -74,7 +76,8 @@ const FeaturedBlog = ({
               {featured.description}
             </p>
             
-            <Link href={`/blog/${featured?.slug}`} className="more-btn">
+            {/* <Link href={`/blog/${featured?.slug}`} className="more-btn"> */}
+            <Link href={`/blog/30-best-ai-prompts-for-the-opertional-management`}  className="more-btn">
               Read more 
               <span style={{ fontSize: 18 }}>
                 <Image 
