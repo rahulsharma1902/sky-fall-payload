@@ -8,19 +8,40 @@ export default function BlogCard({ blog }) {
     <div className="blog-boxs">
       <div className="card bg-dark text-white h-100">
         <Link href={`/blog/${blog?.slug}`}>
-          <img
+          {/* <img
             src={blog?.image?.url}
             className="card-img-top rounded-none"
             alt={blog?.image?.alt || blog?.title}
             style={{ height: '160px', objectFit: 'cover' }}
+          /> */}
+          {/* <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet={blog?.image?.sizes?.desktop?.url}
           />
+            <source
+              media="(min-width: 640px)"
+              srcSet={blog?.image?.sizes?.tablet?.url}
+          />
+            <source
+              media="(max-width: 639px)"
+              srcSet={blog?.image?.sizes?.mobile?.url}
+          />
+            <img
+              src={blog?.image?.url}
+              className="card-img-top rounded-none"
+              alt={blog?.image?.alt || blog?.title}
+              style={{ height: '160px', objectFit: 'cover', width: '100%' }}
+            />
+          </picture> */}
+
         </Link>
-        {/* <img
+        <img
           src={`/media/${imageFilename}`}
           className="card-img-top rounded-none"
           alt={blog?.image?.alt || blog?.title}
           style={{ height: '160px', objectFit: 'cover' }}
-        /> */}
+        />
         <div className="card-body bg-black border-none d-flex flex-column">
           <small className="text-muted">
           <p>

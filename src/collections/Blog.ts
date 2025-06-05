@@ -1,25 +1,25 @@
 // collections/Blog.ts
-import type { CollectionConfig } from "payload";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import type { CollectionConfig } from 'payload'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const Blog: CollectionConfig = {
-  slug: "blogs",
+  slug: 'blogs',
   admin: {
-    useAsTitle: "title",
-    defaultColumns: ["title", "slug", "publishedDate"],
+    useAsTitle: 'title',
+    defaultColumns: ['title', 'slug', 'publishedDate'],
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "title",
-      type: "text",
+      name: 'title',
+      type: 'text',
       required: true,
     },
     {
-      name: "slug",
-      type: "text",
+      name: 'slug',
+      type: 'text',
       required: true,
       unique: true,
       admin: {
@@ -27,50 +27,58 @@ export const Blog: CollectionConfig = {
       },
     },
     {
-      name: "author",
-      type: "relationship",
-      relationTo: "users",
+      name: 'author',
+      type: 'relationship',
+      relationTo: 'users',
       required: true,
     },
     {
-      name: "publishedDate",
-      type: "date",
+      name: 'categories',
+      type: 'relationship',
+      relationTo: 'categories',
+      required: true,
+      admin: {
+        description: 'Select a categories for this blog post.',
+      },
+    },
+    {
+      name: 'publishedDate',
+      type: 'date',
       admin: {
         date: {
-          pickerAppearance: "dayAndTime",
+          pickerAppearance: 'dayAndTime',
         },
       },
     },
     {
-      name: "readTime",
-      type: "number",
-      label: "Estimated Read Time (minutes)",
+      name: 'readTime',
+      type: 'number',
+      label: 'Estimated Read Time (minutes)',
       required: false,
       min: 1,
       admin: {
-        description:
-          "Estimated time it takes to read this blog post (in minutes).",
+        description: 'Estimated time it takes to read this blog post (in minutes).',
       },
     },
     {
-      name: "image",
-      type: "upload",
-      relationTo: "media",
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
       required: false,
     },
     {
-      name: "description",
-      type: "text",
+      name: 'description',
+      type: 'text',
       required: true,
       admin: {
-        description: "Short summary of the blog post for previews or SEO.",
+        description: 'Short summary of the blog post for previews or SEO.',
       },
     },
     {
-      name: "content",
-      type: "richText",
+      name: 'content',
+      type: 'richText',
       editor: lexicalEditor(),
       required: true,
     },
   ],
-};
+}

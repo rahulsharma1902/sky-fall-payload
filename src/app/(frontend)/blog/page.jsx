@@ -36,12 +36,12 @@ export default function Blog() {
         home={false}
         title={blogSettings?.title ?? 'Enterprise hub' }
         description={blogSettings?.description ?? 'hub for all enterprise news' }
-        bannerImage={blogSettings?.bannerImage?.url ?? '/images/blog/banner-img.png'}
-        // bannerImage={
-        //   blogSettings?.bannerImage?.url
-        //     ? `/media/${blogSettings.bannerImage.url.split('/').pop()}`
-        //     : '/images/blog/banner-img.png'
-        // }
+        // bannerImage={blogSettings?.bannerImage?.url ?? '/images/blog/banner-img.png'}
+        bannerImage={
+          blogSettings?.bannerImage?.url
+            ? `/media/${blogSettings.bannerImage.url.split('/').pop()}`
+            : '/images/blog/banner-img.png'
+        }
         
       />
       <Modal />

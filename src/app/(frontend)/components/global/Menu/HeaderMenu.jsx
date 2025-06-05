@@ -2,36 +2,42 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
+import "./Navbar.css";
 
 const HeaderMenu = () => {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const links = [
+    { name: "Technology", href: "/technology" },
+    { name: "Product", href: "/product" },
+    { name: "Blog", href: "/blog" },
+  ];
+
   return (
-    <ul
-      className="navbar-nav ms-5 ms-auto mb-lg-0"
-      style={{ display: "flex", flexDirection: "row", gap: "1rem" }}
-    >
-      <li className="nav-item">
-        <Link
-          href="/product"
-          className={`nav-link f-c-s ff-j f-20 f-w-400 px-md-3 px-2 py-md-2 py-1 customLinks ${
-            pathname === "/product" ? "active" : ""
-          }`}
-        >
-          Product
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          href="/blog"
-          className={`nav-link f-c-s ff-j f-20 f-w-400 px-md-3 px-2 py-md-2 py-1 customLinks ${
-            pathname === "/blog" ? "active" : ""
-          }`}
-        >
-          Blog
-        </Link>
-      </li>
-    </ul>
+    <nav className="navbar-content">
+      <div
+        className={`menu-toggle ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <div className="bar top" />
+        <div className="bar middle" />
+        <div className="bar bottom" />
+      </div>
+
+      <ul className={`menu ${menuOpen ? "open" : ""}`}>
+      {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className={`link-menu ${pathname === link.href ? "active" : ""}`}>
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

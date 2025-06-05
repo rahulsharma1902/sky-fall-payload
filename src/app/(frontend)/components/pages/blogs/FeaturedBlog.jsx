@@ -26,19 +26,28 @@ const FeaturedBlog = ({
   return (
     <section className="featured-blog" style={{ background: '#000', color: '#fff', padding: '32px 0' }}>
       <div className="container" style={{ margin: '0 auto', padding: '0 12px' }}>
-        <div><h2>Featured Blog</h2></div>
+         <div className="stars-featured">
+         <Image 
+           src={"/images/svg/stars.svg"}
+            width={5}
+            height={5}
+            alt={"Arrow Back"}
+            layout="responsive"
+          />
+          <h2>Featured Blog</h2>
+          </div>
         <div className="row">
           {/* Left: Image */}
           <div className="col-md-7 featured-blog-image">
           <div className="featured-img">
           <Link href={`/blog/${featured?.slug}`}>
           <img
-              src={featured.image?.url || StaticImage }
-              // src={
-              //   featured.image?.url
-              //     ? `/media/${featured.image.url.split('/').pop()}`
-              //     : '/images/static-fallback.png'
-              // }              
+              // src={featured.image?.url || StaticImage }
+              src={
+                featured.image?.url
+                  ? `/media/${featured.image.url.split('/').pop()}`
+                  : '/images/static-fallback.png'
+              }              
               alt={featured?.alt || featured?.title}
               style={{ width: '100%', height: '100%',objectFit: 'cover' }}
             />

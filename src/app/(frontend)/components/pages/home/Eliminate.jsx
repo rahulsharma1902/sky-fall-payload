@@ -11,19 +11,18 @@ const Eliminate = () => {
         <div className="row ">
           <div className="col-12 text-center ">
             <h2 className="f-32 f-c-p  ff-j py-md-4 py-3  px-md-0 px-4 customHeadingRightCorner position-relative ">
-              Eliminate majority of your IT team with AI agents
-              <br />
-              Get an army of thousands of AI agents that solve all your IT
-              problems.
+              Solve Complex IT Tickets in Minutes - Not Days
+              
             </h2>
             <p className="f-20 f-c-s ff-i f-w-400 d-none d-md-block">
-              Skyfall&apos;s AI agents complete complex IT tasks in minutes and
-              will save your org millions of dollars compared to
-              <br />
-              error prone human teams. With automated precision and zero
-              overhead, our AI agents free IT leaders
-              <br />
-              to focus on strategic projects that drive real business value.
+            Skyfall deploys thousands of World Model powered agents to solve your most complex IT 
+            <br />
+            tickets - fast. From complex support to infrastructure fixes, our agents execute with
+            <br />
+             automated precision, zero human error and no overhead. Stop firefighting, and focus on
+             <br />
+              creating strategic business value for the organization.
+            
             </p>
           </div>
         </div>
