@@ -35,13 +35,14 @@ export default function BlogCard({ blog }) {
             />
           </picture> */}
 
-        </Link>
+        
         <img
           src={`/media/${imageFilename}`}
           className="card-img-top rounded-none"
           alt={blog?.image?.alt || blog?.title}
           style={{ height: '160px', objectFit: 'cover' }}
         />
+        </Link>
         <div className="card-body bg-black border-none d-flex flex-column">
           <small className="text-muted">
           <p>
