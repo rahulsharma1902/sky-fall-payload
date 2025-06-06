@@ -1,12 +1,13 @@
-import Aboutus from "./components/pages/home/Aboutus";
-import WorldModel from "./components/pages/technology/WorldModel";
-import TechBg from "./components/pages/technology/TechBg";
-import TechDescription from "./components/pages/technology/TechDescription";
-import HeroSection from  "./components/pages/home/HeroSection";
-import AutonomousSupport from "./components/pages/home/AutonomousSupport";
-import EnterpriseITHero from "./components/pages/home/EnterpriseITHero";
-import FeatureSection from "./components/pages/home/FeaturesHome";
-import WaitlistSection from "./components/pages/home/WaitlistSection"
+// import Aboutus from './components/pages/home/Aboutus'
+// import WorldModel from './components/pages/technology/WorldModel'
+// import TechBg from './components/pages/technology/TechBg'
+// import TechDescription from './components/pages/technology/TechDescription'
+import HeroSection from './components/pages/home/HeroSection'
+import AutonomousSupport from './components/pages/home/AutonomousSupport'
+import EnterpriseITHero from './components/pages/home/EnterpriseITHero'
+import FeatureSection from './components/pages/home/FeaturesHome'
+import WaitlistSection from './components/pages/home/WaitlistSection'
+import Modal from '../(frontend)/components/common/modal/Modal'
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
       <EnterpriseITHero />
       <FeatureSection />
       <WaitlistSection />
-
+      <Modal />
     </section>
-  );
+  )
 }
