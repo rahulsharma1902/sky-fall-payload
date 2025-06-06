@@ -442,6 +442,24 @@ button.more-btn img {
     height: 15px !important;
     width: 15px !important;
 }
+button.btn.view-more {
+    border: 1px solid #A2A2A2;
+    color: #A2A2A2;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px !important;
+    width: fit-content !important;
+    transition: all 0.3s ease-in-out;
+    line-height: normal;
+    height: 100%;
+    font-size: 16px;
+    background-color: #161616 !important;
+}
+button.btn.view-more img{
+    max-width: 12px;
+}
+
 .card-body a.btn {
     display: flex;
     align-items: center;
@@ -893,7 +911,9 @@ button.more-btn img {
         margin-bottom: 24px;
         padding-bottom: 24px !important;
     }
-    .blog-boxs:last-child{
+    .blog-boxs:last-child {
         border: 0px !important;
+        padding: 0 !important;
+        margin-bottom: 27px !important;
     }
 }

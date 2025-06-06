@@ -187,6 +187,7 @@ const FlowChart = () => {
           <img
             className={styles.borderLine}
             src={"/images/flowchart/line.svg"}
+            alt="flowchart-line"
           />
         </div>
       </div>

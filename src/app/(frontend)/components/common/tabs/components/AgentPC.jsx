@@ -1428,7 +1428,7 @@ const AgentPC = () => {
           <div
             className={`${styles.cardActiveBg} ${styles.cardHeight}  p-2 ${styles.cardActiveBgHide}`}
           >
-            <img src={"/images/icon/flowIcon.svg"} className="img-fluid" />
+            <img src={"/images/icon/flowIcon.svg"} className="img-fluid" alt="flowIcon"/>
           </div>
           <div
             className={`flex-grow-1 p-md-2 my-1  ${styles.sideBorderLeft} d-flex align-items-center `}
@@ -1440,6 +1440,7 @@ const AgentPC = () => {
           <img
             src={"/images/icon/headingCorner.svg"}
             className={`d-none  ${styles.tabMobileCorner}`}
+            alt="headingCorner"
           />
         </div>
         <div className={styles.mobileChart}>
@@ -1831,10 +1832,12 @@ const AgentPC = () => {
                   <img
                     src={"./images/svg/plan.svg"}
                     className="img-fluid position-absolute itamLoader3g"
+                    alt={"plan"}
                   />
                   <img
                     src={"./images/svg/loader1.svg"}
                     className="img-fluid itamLoader3 rotateAnimation "
+                    alt={"plan"}
                   />
                 </div>
                 <p className="f-12 ff-j f-c-s text-uppercase pt-2 ">PLAN</p>
@@ -1853,6 +1856,7 @@ const AgentPC = () => {
                       <img
                         src={"/images/icon/checkSmall.svg"}
                         className="img-fluid"
+                        alt={"plan"}
                       />
                     </div>
                     <div>
@@ -1873,6 +1877,7 @@ const AgentPC = () => {
                         <Image
                           src={`/images/icon/azaur.svg`}
                           className="img-fluid "
+                          alt={"azaur"}
                           width={23}
                           height={25}
                         />
@@ -1891,6 +1896,7 @@ const AgentPC = () => {
                         className="img-fluid me-2"
                         width={35}
                         height={25}
+                        alt={"salesForce"}
                       />
                       <div>
                         <p className="f-12 ff-j f-c-a f-w-300">$ 48793</p>
@@ -1923,10 +1929,12 @@ const AgentPC = () => {
                   <img
                     src={"./images/svg/monitor.svg"}
                     className="img-fluid position-absolute itamLoader5g"
+                    alt={"monitor"}
                   />
                   <img
                     src={"./images/svg/loader1.svg"}
                     className="img-fluid itamLoader5 rotateAnimation "
+                    alt={"loader1"}
                   />
                 </div>
                 <p className="f-12 ff-j f-c-s text-uppercase pt-2 ">MONITOR </p>
@@ -1945,6 +1953,7 @@ const AgentPC = () => {
                       <img
                         src={"/images/icon/checkSmall.svg"}
                         className="img-fluid"
+                        alt={"checkSmall"}
                       />
                     </div>
                     <div>
@@ -1964,10 +1973,12 @@ const AgentPC = () => {
                       <img
                         src={"/images/icon/bgCheck.svg"}
                         className="img-fluid"
+                        alt={"bgCheck"}
                       />
                       <img
                         src={"/images/icon/sline.svg"}
                         className={`img-fluid ${styles.checkLineContainer}`}
+                        alt={"sline"}
                       />
                     </div>
                     <div className="d-flex align-items-center ">
@@ -1976,6 +1987,7 @@ const AgentPC = () => {
                         className="img-fluid mx-3 "
                         width={25}
                         height={25}
+                        alt={"azaur"}
                       />
                       <div>
                         <p className="f-12 ff-j f-c-p f-w-300">Microsoft 365</p>
@@ -1988,6 +2000,7 @@ const AgentPC = () => {
                     <img
                       src={"/images/icon/bgCheck.svg"}
                       className="img-fluid"
+                      alt={"bgCheck"}
                     />
                     <div className="d-flex align-items-center ">
                       <img
@@ -1995,6 +2008,7 @@ const AgentPC = () => {
                         className="img-fluid mx-3"
                         width={25}
                         height={25}
+                        alt={"salesForce"}
                       />
                       <div>
                         <p className="f-12 ff-j f-c-p f-w-300">Sales Force</p>

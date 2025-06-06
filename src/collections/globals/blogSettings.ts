@@ -1,40 +1,43 @@
-import { GlobalConfig, CollectionSlug } from "payload";
+import { GlobalConfig, CollectionSlug } from 'payload'
 
 const BlogSettings: GlobalConfig = {
-  slug: "blog-settings",
-  label: "Blog Settings",
+  slug: 'blog-settings',
+  access: {
+    read: () => true,
+  },
+  label: 'Blog Settings',
   fields: [
     {
-      name: "title",
-      type: "text",
+      name: 'title',
+      type: 'text',
       required: true,
     },
     {
-      name: "description",
-      type: "text",
+      name: 'description',
+      type: 'text',
       required: true,
     },
     {
-      name: "bannerImage",
-      label: "Blog Banner Image",
-      type: "upload",
-      relationTo: "media",
+      name: 'bannerImage',
+      label: 'Blog Banner Image',
+      type: 'upload',
+      relationTo: 'media',
       required: true,
     },
     {
-      name: "fetureBlog",
-      type: "relationship",
-      relationTo: "blogs" as CollectionSlug,  
+      name: 'fetureBlog',
+      type: 'relationship',
+      relationTo: 'blogs' as CollectionSlug,
       required: true,
     },
     {
-      name: "paginationCount",
-      label: "Posts per Page",
-      type: "number",
+      name: 'paginationCount',
+      label: 'Posts per Page',
+      type: 'number',
       defaultValue: 6,
       required: true,
     },
   ],
-};
+}
 
-export default BlogSettings;
+export default BlogSettings
