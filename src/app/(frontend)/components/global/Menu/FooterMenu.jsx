@@ -4,10 +4,12 @@ import styles from "./footerMenu.module.css";
 
 const FooterMenu = () => {
   return (
-    <ul className={styles.footerMenu}>
-      {/* <li>Terms</li>
-      <li>Privacy</li> */}
+    <div className="footer-menu">
+      <ul className={styles.footerMenu}>
+      <li>Terms</li>
+      <li>Privacy</li>
     </ul>
+    </div>
   );
 };
 

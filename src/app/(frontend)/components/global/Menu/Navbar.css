@@ -89,12 +89,20 @@ nav.navbar {
   
   .menu-toggle.open .bottom {
     transform: rotate(-43deg) translate(3px, -3px);
-}
-header nav.navbar {
-  padding: 35px 0;
-  background: #161616;
-  backdrop-filter: blur(12px);
-}
+  }
+
+  header nav.navbar {
+    padding: 35px 0;
+    background: #161616;
+    backdrop-filter: blur(12px);
+  }
+
+  @media (max-width: 991px) {
+    header nav.navbar {
+      padding: 24px 0;
+  }
+  }
+
 
   @media (max-width: 768px) {
 
@@ -157,7 +165,9 @@ header nav.navbar {
       font-size: 12px;
       letter-spacing: 0;
     }
-  
+    header nav.navbar {
+      padding: 12px;
+    }
     ul.menu {
       gap: 10px !important;
       padding: 20px !important;
