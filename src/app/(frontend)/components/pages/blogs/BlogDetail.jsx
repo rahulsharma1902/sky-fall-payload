@@ -63,14 +63,14 @@ const BlogDetail = () => {
             {blog.readTime ? ` • ${blog.readTime} min read` : ''}
         </p>
         <div className="details-images">
-        <img
+        {/* <img
           // src={blog?.image?.url}
           src={`/media/${blog.image.url.split('/').pop()}`}
           className="card-img-top"
           alt={blog?.image?.alt || blog?.title}
           loading="lazy"
-        />
-        {/* <picture>
+        /> */}
+        <picture>
           <source media="(min-width: 1024px)" srcSet={blog.image?.sizes?.desktop?.url} />
           <source media="(min-width: 640px)" srcSet={blog.image?.sizes?.tablet?.url} />
           <img
@@ -79,7 +79,7 @@ const BlogDetail = () => {
             loading="lazy"
             style={{ width: "100%"}}
           />
-        </picture> */}
+        </picture>
 
         </div>
         {/* <h1 className="text-3xl font-bold mb-4">{blog?.title}</h1>

@@ -22,6 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+
   collections: [Users, Media, Blog, Category],
   globals: [blogSettings],
   editor: lexicalEditor(),

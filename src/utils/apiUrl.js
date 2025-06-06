@@ -1,5 +1,4 @@
-// const BASE_URL = process.env.REACT_APP_BASE_API_URL || "http://localhost:3000";
-const BASE_URL = process.env.REACT_APP_BASE_API_URL || 'https://sky-fall-payload.vercel.app/'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_API_URL
 
 const API_BASE = `${BASE_URL}/api`
 

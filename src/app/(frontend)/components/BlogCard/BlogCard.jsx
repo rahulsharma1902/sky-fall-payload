@@ -14,7 +14,7 @@ export default function BlogCard({ blog }) {
             alt={blog?.image?.alt || blog?.title}
             style={{ height: '160px', objectFit: 'cover' }}
           /> */}
-          {/* <picture>
+          <picture>
             <source
               media="(min-width: 1024px)"
               srcSet={blog?.image?.sizes?.desktop?.url}
@@ -33,15 +33,15 @@ export default function BlogCard({ blog }) {
               alt={blog?.image?.alt || blog?.title}
               style={{ height: '160px', objectFit: 'cover', width: '100%' }}
             />
-          </picture> */}
+          </picture>
 
         
-        <img
+        {/* <img
           src={`/media/${imageFilename}`}
           className="card-img-top rounded-none"
           alt={blog?.image?.alt || blog?.title}
           style={{ height: '160px', objectFit: 'cover' }}
-        />
+        /> */}
         </Link>
         <div className="card-body bg-black border-none d-flex flex-column">
           <small className="text-muted">
