@@ -1,20 +1,31 @@
 import React from "react";
 import "./Banner.css";
-import Image from "next/image";
 
 const supportData = [
   {
-    image: "/images/home/support1.png",
+    images: {
+      desktop: "/images/home/support1-desktop.png",
+      tablet: "/images/home/support1-tablet.png",
+      mobile: "/images/home/support1-mobile.png"
+    },
     title: "Complex Issues, Solved in Minutes",
     description: "Skyfall handles your most expensive and difficult IT tickets with minimal human touch."
   },
   {
-    image: "/images/home/support2.png",
+    images: {
+      desktop: "/images/home/support2-desktop.png",
+      tablet: "/images/home/support2-tablet.png",
+      mobile: "/images/home/support2-mobile.png"
+    },
     title: "Deep Integration. Total Autonomy",
     description: "AI agents understand your IT systems and resolve L3 issues — securely and independently."
   },
   {
-    image: "/images/home/support3.png",
+    images: {
+      desktop: "/images/home/support3-desktop.png",
+      tablet: "/images/home/support3-tablet.png",
+      mobile: "/images/home/support3-mobile.png"
+    },
     title: "No Escalations. No Tribal Knowledge",
     description: "Eliminate bottlenecks and resolve IT issues instantly, at scale."
   }
@@ -32,15 +43,16 @@ const AutonomousSupport = () => {
           {supportData.map((item, index) => (
             <div className="col-md-4" key={index}>
               <div className="support-box">
-                {/* <img src={item.image} alt={item.title} /> */}
-                <Image 
-                  src={item.image}
-                  width={5}
-                  height={5}
-                  alt={item.title}
-                  className="img-fluid mb-3"
-                  layout="responsive"
-                />
+                <picture>
+                  <source media="(min-width: 1024px)" srcSet={item.images.desktop} />
+                  <source media="(min-width: 768px) and (max-width: 1023px)" srcSet={item.images.tablet} />
+                  <source media="(max-width: 767px)" srcSet={item.images.mobile} />
+                  <img
+                    src="abc"
+                    alt={item.title}
+                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                  />
+                </picture>
                 <h5>{item.title}</h5>
                 <p>{item.description}</p>
               </div>

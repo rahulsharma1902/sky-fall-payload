@@ -535,6 +535,9 @@ button.btn.view-more img{
         order: 2;
         line-height: normal;
     }
+    small.text-muted p {
+        margin: 0;
+    }
     section.blog-banner {
         position: relative;
         height: 200px;
