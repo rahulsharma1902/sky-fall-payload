@@ -1,9 +1,9 @@
-p.technology-content {
+p.technology-contents {
     max-width: 811px;
     margin: auto;
     color: #A2A2A2;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.2;
     margin-bottom: 30px;
 }
@@ -20,7 +20,7 @@ p.technology-content {
     max-width: 920px;
 }
 @media only screen and (max-width: 991px) {
-    p.technology-content {
+    p.technology-contents {
         font-size: 16px;
     }
     .enterprise-txt h3 {
