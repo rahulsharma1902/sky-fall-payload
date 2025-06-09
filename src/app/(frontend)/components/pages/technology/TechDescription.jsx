@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import "./technology.css"
 
 const TechDescription = () => {
   return (
@@ -7,7 +8,7 @@ const TechDescription = () => {
       <div className="container py-md-5">
         <div className="row ">
           <div className="col-md-12 d-flex algin-items-center">
-            <div className="w-100">
+            <div className="w-100 enterprise-txt">
               <h3 className="f-40 f-c-p ff-j text-center m-0">
                 Reimagining the Enterprise
               </h3>

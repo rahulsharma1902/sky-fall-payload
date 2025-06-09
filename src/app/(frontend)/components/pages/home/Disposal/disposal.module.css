@@ -144,6 +144,21 @@
 .gridPadding {
   padding: 2.5rem 0px;
 }
+/* new css june 9 */
+
+.software-license-section {
+  padding-bottom: 0px !important;
+}
+
+.software-license-section .tab-pane {
+  padding-bottom: 100px !important;
+}
+
+div#myTabContent {
+  padding-bottom: 0 !important;
+}
+
+
 
 @media only screen and (min-width: 1024px) and (max-width: 1211px) {
   .userCard {

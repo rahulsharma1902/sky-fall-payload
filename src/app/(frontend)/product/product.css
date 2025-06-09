@@ -1,0 +1,49 @@
+.product-content br {
+    display: none;
+}
+
+.product-content p.f-24.f-c-s.py-md-2.pb-2.f-w-400 {
+    max-width: 692px;
+    margin: auto;
+    font-size: 20px;
+    color: #A2A2A2;
+}
+
+.product-content .container.py-2 {
+    padding: 0px !important;
+    margin-top: 30px;
+}
+
+.product-content .newLetter_letterContainer__Dy1Uu {
+    padding: 0;
+}
+
+.product-content button.f-20.f-c-s {
+    padding: 18px 20px;
+    font-family: JetBrains Mono;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    text-align: center;
+    color: #A2A2A2;
+    background: #161616;
+}
+@media only screen and (max-width: 767px) {
+    .product-content p.f-24.f-c-s.py-md-2.pb-2.f-w-400 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .product-content button.f-20.f-c-s {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .product-content button.f-20.f-c-s img {
+        max-width: 10px;
+    }
+    
+    .product-content .container.py-2 {
+        margin-top: 10px;
+    }
+  }

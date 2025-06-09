@@ -1,0 +1,33 @@
+p.technology-content {
+    max-width: 811px;
+    margin: auto;
+    color: #A2A2A2;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+.enterprise-txt h3 {
+    line-height: 50px;
+}
+
+.enterprise-txt p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A2A2A2;
+    width: 100% !important;
+    max-width: 920px;
+}
+@media only screen and (max-width: 991px) {
+    p.technology-content {
+        font-size: 16px;
+    }
+    .enterprise-txt h3 {
+        line-height: normal;
+    }
+    .enterprise-txt p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+  }
