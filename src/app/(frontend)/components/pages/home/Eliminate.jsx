@@ -15,11 +15,22 @@ const Eliminate = () => {
               Solve Complex IT Tickets in Minutes - Not Days
               
             </h2>
+
             <p className="technology-content">
             Skyfall deploys thousands of World Model powered agents to solve your most complex IT 
             tickets - fast. From complex support to infrastructure fixes, our agents execute with
              automated precision, zero human error and no overhead. Stop firefighting, and focus on
               creating strategic business value for the organization.
+
+            <p className="f-20 f-c-s ff-i f-w-400 d-none d-md-block">
+            Skyfall deploys thousands of World Model-powered agents to resolve your most complex
+            <br />
+            IT tickets—fast. From infrastructure issues to escalated support cases, our agents
+            <br />
+            execute with automated precision, zero human error, and no operational overhead.
+             <br />
+             Stop firefighting. Start delivering strategic value.
+            
             </p>
           </div>
         </div>
