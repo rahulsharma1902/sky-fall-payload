@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Divider from "../../common/divider/Divider";
+import "./Banner.css"
 
 const Aboutus = () => {
   return (
@@ -11,8 +12,8 @@ const Aboutus = () => {
         <div className="container pt-3">
           <div className="row pt-md-5 pt-4">
             <div className="col-12 text-center px-md-0 px-3">
-              <h1 className="f-64 f-c-p ">About us</h1>
-              <div className="px-md-4 px-lg-5 py-3 pb-5 pt-3 mx-md-4 mx-lg-5">
+              <h3 class="f-40 f-c-p ff-j text-center m-0">About us</h3>
+              <div className="About-content">
                 {/* <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1">
                   The Skyfall founding team comprises of Maluuba founders who
                   were previously pioneers in the Deep learning revolution.
@@ -33,16 +34,13 @@ const Aboutus = () => {
                   NAACL, et al. For more information, please contact -{" "}
                   <Link href={"mailto:info@skyfall.ai"}>info@skyfall.ai</Link>
                 </p> */}
-                <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1">
+                <p>
                   Sam Pasupalak, previously co-founded Maluuba, one of the pioneers of Deep
-                  <br />
                   Learning acquired by <Link href={"#"}>MICROSOFT</Link>
                 </p>
-                <p className="f-20 l-h-1-1 f-w-400 f-c-s ff-i px-md-4 px-lg-4  mx-md-4 mx-lg-5 text-center l-h-1-1 mt-5">
+                <p>
                 Now, with Skyfall, we're pioneering the world’s first autonomous IT department,
-                <br /> 
                 transforming IT from a cost center to a strategic driver with AI-powered efficiency
-                <br />
                 and zero overhead.
                 </p>
                 

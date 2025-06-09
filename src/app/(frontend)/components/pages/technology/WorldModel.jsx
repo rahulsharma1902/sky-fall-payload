@@ -3,7 +3,7 @@ import React from "react";
 import AnimatedHChart from "../../animations/AnimatedHChart";
 import AnimatedVChart from "../../animations/AnimatedVChart";
 import PathAnimation from "../../animations/AnimatedVDots";
-
+import "./technology.css"
 const WorldModel = () => {
   return (
     <section className="container-xxl py-5 worldModelSection">
@@ -24,15 +24,14 @@ const WorldModel = () => {
               for the enterprise.
             </p>
 
-            <p className="f-20 f-c-s ff-i f-w-400 px-md-5 pb-md-5 pb-4 l-h-1-1">
+            <p className="technology-content">
               The goal of the &apos;Enterprise World Model&apos; is to overcome
               the severe limitations of LLMs{" "}
-              <br className=" d-none d-md-block" />
               (Safety, Hallucinations & Expensive training) in order to provide
               enterprises significant
-              <br className=" d-none d-md-block" /> value by having a
+               value by having a
               comprehensive understanding of the complex interplay between
-              <br className=" d-none d-md-block" /> data, people and processes
+               data, people and processes
               within their organization.
             </p>
           </div>

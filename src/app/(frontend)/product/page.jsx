@@ -8,7 +8,7 @@ import BannarHome from "../components/pages/home/BannarHome";
 import WorldIT from "../components/pages/home/WorldIT";
 import Lenis from "lenis";
 import Aboutus from "../components/pages/home/Aboutus";
-
+import "./product.css"
 export default function Product() {
   useEffect(() => {
     const lenis = new Lenis();
@@ -26,13 +26,15 @@ export default function Product() {
   return (
     <section>
       <BannarHome />
-      <WorldIT
+    <section className="product-content">
+    <WorldIT
         home={true}
-        title={`The First AI Department`}
-        tagline={`That Solves All IT Tasks Autonomously`}
+        title={<h3 className="f-40 f-c-p ff-j text-center m-0">The First AI Department</h3>}
+        tagline={<h3 className="f-40 f-c-p ff-j text-center m-0">That Solves All IT Tasks Autonomously</h3>}
         description1={`Powered by Enterprise World Models - Skyfall’s AI Agents fix complex IT `}
         description2={`issues, minimizing need for human intervention`}
       />
+    </section>
       <Modal />
       <Eliminate />
       <Disposal />

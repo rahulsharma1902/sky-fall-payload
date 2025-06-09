@@ -184,8 +184,15 @@ section.layoutBg.sticky-header.show {
       padding: 12px;
     }
     ul.menu {
-      gap: 10px !important;
+      gap: 0 !important;
       padding: 20px !important;
       padding-top: 10px !important;
     }
+    header ul.menu li a {
+      border-top: 0.5px solid #585858;
+      padding: 10px 0;
+      width: 100%;
+      display: block;
+      font-size: 15px;
+  }
   }

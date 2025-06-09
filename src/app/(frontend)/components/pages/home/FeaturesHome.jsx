@@ -46,7 +46,7 @@ const features = [
 
 const FeatureSection = () => {
   return (
-    <section className="white-bg py-5">
+    <section className="white-bg">
       <div className="container">
         <div className="row">
           {features.map((feature, idx) => (
