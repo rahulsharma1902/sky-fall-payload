@@ -78,7 +78,22 @@ nav.navbar {
     transition: 0.3s ease;
     transform-origin: center;
 }
-  
+
+section.layoutBg.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: white;
+  transition: transform 0.3s ease-in-out;
+}
+section.layoutBg.sticky-header.hide {
+  transform: translateY(-100%);
+}
+section.layoutBg.sticky-header.show {
+  transform: translateY(0);
+}
+
+
 .menu-toggle.open .top {
     transform: rotate(43deg) translate(3px, 3px);
 }
@@ -174,4 +189,3 @@ nav.navbar {
       padding-top: 10px !important;
     }
   }
-  

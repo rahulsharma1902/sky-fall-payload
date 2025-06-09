@@ -15,13 +15,13 @@ const Eliminate = () => {
               
             </h2>
             <p className="f-20 f-c-s ff-i f-w-400 d-none d-md-block">
-            Skyfall deploys thousands of World Model powered agents to solve your most complex IT 
+            Skyfall deploys thousands of World Model-powered agents to resolve your most complex
             <br />
-            tickets - fast. From complex support to infrastructure fixes, our agents execute with
+            IT tickets—fast. From infrastructure issues to escalated support cases, our agents
             <br />
-             automated precision, zero human error and no overhead. Stop firefighting, and focus on
+            execute with automated precision, zero human error, and no operational overhead.
              <br />
-              creating strategic business value for the organization.
+             Stop firefighting. Start delivering strategic value.
             
             </p>
           </div>

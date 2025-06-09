@@ -36,7 +36,7 @@ export default function Product() {
       <Modal />
       <Eliminate />
       <Disposal />
-      <Aboutus />
+      {/* <Aboutus /> */}
     </section>
   );
 }

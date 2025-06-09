@@ -1,23 +1,23 @@
-import React from "react";
-import Header from "./components/global/Header/Header.jsx";
-import Footer from "./components/global/Footer/Footer.jsx";
-import "bootstrap/dist/css/bootstrap.css";
+import React from 'react'
+import Header from './components/global/Header/Header.jsx'
+import Footer from './components/global/Footer/Footer.jsx'
+import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import "./globals.css";
-import BootstrapClient from "./components/bootstrapClient/BootstrapClient.js";
+import './globals.css'
+import BootstrapClient from './components/bootstrapClient/BootstrapClient.js'
 // import { ReactLenis } from "@/utils/lenis"; // If you're using Lenis
 
 // Importing the Inter font for Next.js
-import { Inter } from "next/font/google";
+import { Inter } from 'next/font/google'
 
 // Initialize the Inter font
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "SkyFall",
+  title: 'SkyFall',
   description: "World's first Autonomous IT Department",
-};
+}
 
 // The RootLayout component
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -34,5 +34,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <BootstrapClient />
       </body>
     </html>
-  );
+  )
 }
