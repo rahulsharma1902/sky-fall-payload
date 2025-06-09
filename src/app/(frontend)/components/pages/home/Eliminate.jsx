@@ -16,7 +16,7 @@ const Eliminate = () => {
               
             </h2>
 
-            <p className="technology-content">
+            <p className="technology-content d-none d-md-block">
             Skyfall deploys thousands of World Model-powered agents to resolve your most complex
             IT tickets—fast. From infrastructure issues to escalated support cases, our agents 
             execute with automated precision, zero human error, and no operational overhead.

@@ -4,6 +4,7 @@ import styles from "./myForm.module.css";
 
 const MyForm = () => {
   const [successCheck, setSuccessCheck] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -11,31 +12,37 @@ const MyForm = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true);
     try {
       console.log(data);
       const formData = new FormData();
       formData.append("Email", data?.email);
       formData.append("Phone", data?.phoneNubmer);
-      await fetch(
+
+      const response = await fetch(
         "https://script.google.com/macros/s/AKfycbw-M5HxOYW69x93VI6A8JxVKyj404M_Pyh4gVcKioruxYFw8clsLdIJTo3zvW-sYqdFhg/exec",
         {
           method: "POST",
           body: formData,
         }
       );
-
-      setSuccessCheck(true);
+      console.log(response);
+      if (response.ok) {
+        setSuccessCheck(true);
+      } else {
+        setSuccessCheck(false);
+      }
     } catch (error) {
-      console.log("error creating");
+      console.log("Error creating:", error);
       setSuccessCheck(false);
     } finally {
-      setSuccessCheck(true);
+      setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="px-5 py-4 ">
-      {successCheck == false ? (
+    <form onSubmit={handleSubmit(onSubmit)} className="px-5 py-4">
+      {successCheck === false && loading === false ? (
         <>
           <div className="pb-2">
             <h2 className="f-32 f-c-p text-center">Join the waitlist</h2>
@@ -83,8 +90,9 @@ const MyForm = () => {
             <button
               type="submit"
               className={`${styles.submitBtn} f-20 ff-j fw-bold`}
+              disabled={loading}
             >
-              Submit
+              {loading ? "Submitting..." : "Submit"} 
             </button>
           </div>
         </>
