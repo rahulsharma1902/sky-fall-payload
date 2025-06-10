@@ -86,7 +86,7 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
   globals: {
     'blog-settings': BlogSetting;
@@ -126,10 +126,10 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   name: string;
   position?: string | null;
-  profileImage?: (string | null) | Media;
+  profileImage?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -146,7 +146,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
+  id: number;
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -191,23 +191,23 @@ export interface Media {
  * via the `definition` "blogs".
  */
 export interface Blog {
-  id: string;
+  id: number;
   title: string;
   /**
    * Unique slug used in the URL (e.g., "my-first-post")
    */
   slug: string;
-  author: string | User;
+  author: number | User;
   /**
    * Select a categories for this blog post.
    */
-  categories: string | Category;
+  categories: number | Category;
   publishedDate?: string | null;
   /**
    * Estimated time it takes to read this blog post (in minutes).
    */
   readTime?: number | null;
-  image?: (string | null) | Media;
+  image?: (number | null) | Media;
   /**
    * Short summary of the blog post for previews or SEO.
    */
@@ -235,7 +235,7 @@ export interface Blog {
  * via the `definition` "categories".
  */
 export interface Category {
-  id: string;
+  id: number;
   /**
    * The display name of the category.
    */
@@ -256,28 +256,28 @@ export interface Category {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
       } | null)
     | ({
         relationTo: 'blogs';
-        value: string | Blog;
+        value: number | Blog;
       } | null)
     | ({
         relationTo: 'categories';
-        value: string | Category;
+        value: number | Category;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -287,10 +287,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -310,7 +310,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -451,11 +451,11 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  * via the `definition` "blog-settings".
  */
 export interface BlogSetting {
-  id: string;
+  id: number;
   title: string;
   description: string;
-  bannerImage: string | Media;
-  fetureBlog: string | Blog;
+  bannerImage: number | Media;
+  fetureBlog: number | Blog;
   paginationCount: number;
   updatedAt?: string | null;
   createdAt?: string | null;

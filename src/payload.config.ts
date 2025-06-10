@@ -1,10 +1,9 @@
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
+import { buildConfig } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
-import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { sqliteAdapter } from '@payloadcms/db-sqlite'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -30,12 +29,14 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+  db: sqliteAdapter({
+    client: {
+      // url: process.env.DATABASE_URL || 'file:./payload.db',
+      url: process.env.DATABASE_URL || 'file:./payload.db',
+    },
   }),
   sharp,
   plugins: [
-    payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
 })
