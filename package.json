@@ -13,7 +13,8 @@
     "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "npx payload migrate"
   },
   "dependencies": {
     "@emotion/styled": "^11.14.0",
@@ -22,7 +23,7 @@
     "@payloadcms/db-sqlite": "^3.42.0",
     "@payloadcms/next": "3.40.0",
     "@payloadcms/payload-cloud": "3.40.0",
-    "@payloadcms/plugin-cloud-storage": "^3.40.0",
+    "@payloadcms/plugin-cloud-storage": "^3.41.0",
     "@payloadcms/richtext-lexical": "3.40.0",
     "@payloadcms/ui": "3.40.0",
     "@prisma/client": "^6.9.0",
