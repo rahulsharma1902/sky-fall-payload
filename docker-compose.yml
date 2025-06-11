@@ -8,15 +8,17 @@ services:
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
+      - ./versel/storage:/home/node/app/versel/storage  # ✅ Persist SQLite database file
     working_dir: /home/node/app/
     command: sh -c "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm dev"
-    depends_on:
-      - mongo
-      # - postgres
     env_file:
       - .env
 
-  # Ensure your DATABASE_URI uses 'mongo' as the hostname ie. mongodb://mongo/my-db-name
+    # Remove mongo if you're not using it anymore
+    # depends_on:
+    #   - mongo
+
+  # ✅ Mongo service — only needed if you're still using Mongo for something
   mongo:
     image: mongo:latest
     ports:
@@ -28,7 +30,7 @@ services:
     logging:
       driver: none
 
-  # Uncomment the following to use postgres
+  # Uncomment to use PostgreSQL
   # postgres:
   #   restart: always
   #   image: postgres:latest
@@ -39,5 +41,5 @@ services:
 
 volumes:
   data:
-  # pgdata:
   node_modules:
+  # pgdata:
