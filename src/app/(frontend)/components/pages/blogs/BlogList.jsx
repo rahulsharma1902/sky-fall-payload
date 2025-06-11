@@ -99,12 +99,12 @@ const BlogList = ({ blogSettings }) => {
     <div className="container py-5 bg-black text-white min-vh-100 blog-heading">
       {/* Tabs */}
       <div className="blog-tabs mb-4">
-        <h2
-          className={`mb-4 tab-btn ${selectedCategory === "all" ? "active" : ""}`}
-          onClick={() => handleCategoryClick("all")}
-        >
-          All Blogs
-        </h2>
+            <h2
+              className={`mb-4 tab-btn ${selectedCategory === "all" ? "active" : ""}`}
+              onClick={() => handleCategoryClick("all")}
+            >
+            All Blogs
+            </h2>
         {categories.map((cat) => (
           
             <h2 className={`mb-4 tab-btn ${selectedCategory === cat.id ? "active" : ""}`}
