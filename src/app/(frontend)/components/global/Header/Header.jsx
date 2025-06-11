@@ -1,68 +1,57 @@
 "use client";
 
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
 import HeaderMenu from "../Menu/HeaderMenu";
 
 const Header = () => {
   const [show, setShow] = useState(true);
-  let lastScrollY = 0;
-  const handleScroll = () => {
-    if (typeof window !== "undefined") {
+  const [hasMounted, setHasMounted] = useState(false);
+  const lastScrollY = useRef(0);
+
+  // Only run scroll logic on client
+  useEffect(() => {
+    setHasMounted(true); // ✅ prevents hydration error
+
+    const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setShow(false);
       } else {
         setShow(true);
       }
 
-      lastScrollY = currentScrollY;
-    }
-  };
-  useEffect(() => {
+      lastScrollY.current = currentScrollY;
+    };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  if (!hasMounted) return null; // ✅ Don't render anything until mounted
+
   return (
     <section className={`layoutBg sticky-header ${show ? "show" : "hide"}`}>
-
       <header>
         <div className="no-padding">
-          {/* <nav className="navbar navbar-expand-lg align-items-center "> */}
-          <nav className={`navbar`}>
+          <nav className="navbar">
             <div className="container no-padding">
               <Link href="/">
                 <Image
-                  layout="responsive"
                   className="logoMobile"
-                  src={"/images/skyfallLogo.svg"}
-                  alt={`sky-fall-logo`}
+                  src="/images/skyfallLogo.svg"
+                  alt="sky-fall-logo"
                   width={200}
                   height={30}
+                  priority
                 />
               </Link>
-              {/* <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button> */}
-              {/* <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              > */}
               <HeaderMenu />
-              {/* </div> */}
             </div>
           </nav>
         </div>

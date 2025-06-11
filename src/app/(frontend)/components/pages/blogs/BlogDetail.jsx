@@ -8,6 +8,7 @@ import  BlogDetailsLoading  from "../../SkeletonLoading/Blog/BlogDetailLoading";
 import Link from "next/link";
 import "./Blog.css"
 import Image from "next/image";
+import NotFoundBlog from "./NotFoundBlog";
 
 
 const BlogDetail = () => {
@@ -42,7 +43,7 @@ const BlogDetail = () => {
   if (loading) return (
     <BlogDetailsLoading />
   );
-  if (!blog) return <p className="text-red-400 p-4">Blog not found.</p>;
+  if (!blog) return <NotFoundBlog />;
 
   return (
   <section className="blogdetails-section">

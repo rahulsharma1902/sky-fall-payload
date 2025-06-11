@@ -1,68 +1,79 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { API_URL } from '../../../../../utils/apiUrl';
+import { API_URL } from "../../../../../utils/apiUrl";
 import BlogCard from "../../BlogCard/BlogCard";
 import "./Blog.css";
 import BlogListLoading from "../../SkeletonLoading/Blog/BlogListLoading";
 import Image from "next/image";
-import Link from 'next/link'
-
+import NotFoundBlog from "./NotFoundBlog";
 const BlogList = ({ blogSettings }) => {
   const [blogs, setBlogs] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
   const limit = blogSettings?.paginationCount || 6;
 
-  // Initial load
+  // Fetch categories on mount
   useEffect(() => {
-    const getInitialBlogs = async () => {
+    const fetchCategories = async () => {
+      try {
+        const res = await fetch(API_URL.GET_ALL_CATEGORIES);
+        const data = await res.json();
+        setCategories(data.docs || []);
+      } catch (error) {
+        console.error("Failed to fetch categories:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
+  // Fetch blogs when category or page changes
+  useEffect(() => {
+    const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${API_URL.GET_ALL_BLOGS}?page=1&limit=${limit}`);
+
+        let url = `${API_URL.GET_ALL_BLOGS}?page=${page}&limit=${limit}`;
+        if (selectedCategory !== "all") {
+          url += `&where[categories][equals]=${selectedCategory}`;
+        }
+
+        const res = await fetch(url);
         const data = await res.json();
-        setBlogs(data.docs);
+
+        setBlogs(data.docs || []);
         setTotalPages(data.totalPages || 1);
-        setPage(1);
       } catch (error) {
         console.error("Failed to fetch blogs:", error);
       } finally {
         setLoading(false);
       }
     };
-    getInitialBlogs();
-  }, []);
 
-  const loadMoreBlogs = async () => {
-    const nextPage = page + 1;
-    setLoading(true);
-    try {
-      const res = await fetch(`${API_URL.GET_ALL_BLOGS}?page=${nextPage}&limit=${limit}`);
-      const data = await res.json();
-      setBlogs(prev => [...prev, ...data.docs]);
-      setPage(nextPage);
-      setTotalPages(data.totalPages || 1);
-    } catch (error) {
-      console.error("Failed to load more blogs:", error);
-    } finally {
-      setLoading(false);
+    fetchData();
+  }, [selectedCategory, page]);
+
+  const handleCategoryClick = (categoryId) => {
+    console.log(categoryId);
+    if (selectedCategory !== categoryId) {
+      setSelectedCategory(categoryId);
+      setPage(1); // Reset page on new category
     }
   };
 
-  const goToPage = async (newPage) => {
-    if (newPage === page || newPage < 1 || newPage > totalPages) return;
-    setLoading(true);
-    try {
-      const res = await fetch(`${API_URL.GET_ALL_BLOGS}?page=${newPage}&limit=${limit}`);
-      const data = await res.json();
-      setBlogs(data.docs);
+  const loadMoreBlogs = () => {
+    if (page < totalPages) {
+      setPage((prev) => prev + 1);
+    }
+  };
+
+  const goToPage = (newPage) => {
+    if (newPage !== page && newPage > 0 && newPage <= totalPages) {
       setPage(newPage);
-      setTotalPages(data.totalPages || 1);
-    } catch (error) {
-      console.error("Failed to go to page:", error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -72,11 +83,11 @@ const BlogList = ({ blogSettings }) => {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
       if (page <= 3) {
-        pages.push(1, 2, 3, '...', totalPages);
+        pages.push(1, 2, 3, "...", totalPages);
       } else if (page >= totalPages - 2) {
-        pages.push(1, '...', totalPages - 2, totalPages - 1, totalPages);
+        pages.push(1, "...", totalPages - 2, totalPages - 1, totalPages);
       } else {
-        pages.push(1, '...', page - 1, page, page + 1, '...', totalPages);
+        pages.push(1, "...", page - 1, page, page + 1, "...", totalPages);
       }
     }
     return pages;
@@ -86,26 +97,66 @@ const BlogList = ({ blogSettings }) => {
 
   return (
     <div className="container py-5 bg-black text-white min-vh-100 blog-heading">
-      <h2 className="mb-4">All Blogs</h2>
-      <div className="blog-row">
-        {blogs.map(blog => (
-          <BlogCard key={blog.id} blog={blog} />
+      {/* Tabs */}
+      <div className="blog-tabs mb-4">
+        <h2
+          className={`mb-4 tab-btn ${selectedCategory === "all" ? "active" : ""}`}
+          onClick={() => handleCategoryClick("all")}
+        >
+          All Blogs
+        </h2>
+        {categories.map((cat) => (
+          
+            <h2 className={`mb-4 tab-btn ${selectedCategory === cat.id ? "active" : ""}`}
+             key={cat.id}
+             onClick={() => handleCategoryClick(cat.id)}
+            >
+            {cat.name}
+            </h2>
+          
         ))}
       </div>
 
+      {/* <h2 className="mb-4">
+        {selectedCategory === "all"
+          ? "All Blogs"
+          : categories.find((cat) => cat.id === selectedCategory)?.name || ""}
+      </h2> */}
+
+      <div className="blog-row">
+        {blogs.length > 0 ? (
+          blogs.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))
+        ) : (
+          <NotFoundBlog
+            title="No Blogs Found"
+            message="There are no blog available in this category right now."
+            linkHref="/blog"
+            linkText="← Back to all blogs"
+            showBtn={false}
+          />
+        )}
+      </div>
+
+
       {/* View More Button - Only on Mobile */}
-      <div className="d-block d-md-none text-center mt-4 mb-4 mt-auto ">
+      <div className="d-block d-md-none text-center mt-4 mb-4 mt-auto">
         {page < totalPages && (
-          <button className="btn btn-outline-light btn-sm mt-2 mb-2 more-btn view-more" onClick={loadMoreBlogs} disabled={loading}>
-            {loading ? 'Loading...' : 'View more'}
+          <button
+            className="btn btn-outline-light btn-sm mt-2 mb-2 more-btn view-more"
+            onClick={loadMoreBlogs}
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "View more"}
             <span style={{ fontSize: 18 }}>
-                <Image 
-                    src={"/images/icon/arrow_back.svg"}
-                    width={5}
-                    height={5}
-                    alt={"Arrow Back"}
-                    layout="responsive"
-                  />
+              <Image
+                src={"/images/icon/arrow_back.svg"}
+                width={5}
+                height={5}
+                alt={"Arrow Back"}
+                layout="responsive"
+              />
             </span>
           </button>
         )}
@@ -122,12 +173,16 @@ const BlogList = ({ blogSettings }) => {
         </button>
 
         {getPageNumbers().map((p, idx) =>
-          p === '...' ? (
-            <span key={idx} className="mx-2">...</span>
+          p === "..." ? (
+            <span key={idx} className="mx-2">
+              ...
+            </span>
           ) : (
             <button
               key={p}
-              className={`btn mx-1 ${p === page ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn mx-1 ${
+                p === page ? "btn-primary" : "btn-outline-secondary"
+              }`}
               onClick={() => goToPage(p)}
               disabled={p === page}
             >
@@ -144,6 +199,8 @@ const BlogList = ({ blogSettings }) => {
           &gt;
         </button>
       </div>
+      
+
     </div>
   );
 };
