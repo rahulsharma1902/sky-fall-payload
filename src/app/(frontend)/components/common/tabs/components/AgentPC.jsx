@@ -1719,26 +1719,26 @@ const AgentPC = () => {
               </svg>
             </div> */}
             <div
-              className={`${styles.cardContainer} position-relative itamMinHeight4`}
+              className={`${styles.cardContainer} position-relative itamMinHeight3`}
             >
-              <div className={"itam4l"}>
+              <div className={"itam3l"}>
                 <div className=" position-relative">
                   <img
                     src={"./images/svg/execute.svg"}
-                    className="img-fluid position-absolute itamLoader4g"
+                    className="img-fluid position-absolute itamLoader3g"
                   />
                   <img
                     src={"./images/svg/loader1.svg"}
-                    className="img-fluid itamLoader4 rotateAnimation "
+                    className="img-fluid itamLoader3 rotateAnimation "
                   />
                 </div>
                 <p className="f-12 ff-j f-c-s text-uppercase pt-2 ">EXECUTE</p>
               </div>
-              <div className="itamDataFlowLines4">
+              <div className="itamDataFlowLines3">
                 <AnimatedLineDots />
               </div>
-              <div className={"itam4"}>
-                <div className="itam4h">
+              <div className={"itam3"}>
+                <div className="itam3h">
                   <div
                     className={`${styles.cardHeader} d-flex align-items-center`}
                   >
@@ -1825,28 +1825,28 @@ const AgentPC = () => {
               </svg>
             </div>
             <div
-              className={`${styles.cardContainer} position-relative itamMinHeight3`}
+              className={`${styles.cardContainer} position-relative itamMinHeight4`}
             >
-              <div className={"itam3l"}>
+              <div className={"itam4l"}>
                 <div className=" position-relative">
                   <img
                     src={"./images/svg/plan.svg"}
-                    className="img-fluid position-absolute itamLoader3g"
+                    className="img-fluid position-absolute itamLoader4g"
                     alt={"plan"}
                   />
                   <img
                     src={"./images/svg/loader1.svg"}
-                    className="img-fluid itamLoader3 rotateAnimation "
+                    className="img-fluid itamLoader4 rotateAnimation "
                     alt={"plan"}
                   />
                 </div>
                 <p className="f-12 ff-j f-c-s text-uppercase pt-2 ">PLAN</p>
               </div>
-              <div className="itamDataFlowLines3">
+              <div className="itamDataFlowLines4">
                 <AnimatedLineDots />
               </div>
-              <div className={"itam3"}>
-                <div className="itam3h">
+              <div className={"itam4"}>
+                <div className="itam4h">
                   <div
                     className={`${styles.cardHeader} d-flex align-items-center`}
                   >
